@@ -1,0 +1,16 @@
+.header {
+	background: red;
+	padding: 15px 15px;
+
+}
+
+.section {
+	padding: 20px;
+}
+
+textarea {
+	resize: none;
+	overflow: hidden;
+	display: block;
+	font-size: 14px;
+}
