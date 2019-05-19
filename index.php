@@ -1,5 +1,19 @@
-<?php  
-	
+<?php 
+	require_once('server/config.php');
+
+	if (isset($_POST['submit'])) {
+		$noi_dung = $_POST['content'];
+
+		global $mysqli;
+		$sql="INSERT INTO 'gui_den'('noi_dung') VALUES ('$noi_dung')";
+		$conn->query($sql);
+
+		if ($conn === TRUE) {
+			echo 'Đã thêm';
+		}else{
+			echo 'lỗi mẹ rồi';
+		}
+	}
 ?>
 
 <!DOCTYPE html>
@@ -20,12 +34,11 @@
 
 <div class="container">
 	<div class="section">
-		<form>
+		<form target="index.php" method="post" >
 		  <div class="form-group" contentEditable="true">
-		    
-		    <textarea id="content" rows="3" name="" type="text" class="form-control" placeholder="Viết suy nghĩ của bạn vào đây"></textarea>
+		    <textarea id="content" rows="3" name="content" type="text" class="form-control" placeholder="Viết suy nghĩ của bạn vào đây"></textarea>
 		  </div>
-		  <button type="submit" class="btn btn-primary btn-block">Gửi</button>
+		  <button type="submit" name="submit" class="btn btn-primary btn-block">Gửi</button>
 		</form>
 	</div>
 </div>
