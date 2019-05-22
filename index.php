@@ -10,7 +10,7 @@
 		$mysqli->query($sql);
 
 		if ($mysqli == TRUE) {
-			$_SESSION["OkMess"] = 'Đã gửi đi và hãy đợi quản trị viên duyệt';
+			$_SESSION["OkMess"] = 'Đã gửi đi và đợi quản trị viên duyệt';
 
 		}else{
 			$_SESSION["ErrorMess"] = "Lỗi mẹ rồi";
@@ -22,6 +22,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>THĐ-TX</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/index.css">
@@ -31,14 +32,14 @@
 <body>
 
 <div class="header">
-	<p>CFS</p>
+	<img src="assets/media/cfs.jpg" alt="" width="40px" height="40px">
 </div>
 
 <div class="container">
 	<div class="section">
 		<form target="index.php" method="post" >
 		  <div class="form-group" contentEditable="true">
-		    <textarea id="content" rows="3" name="content" type="text" class="form-control" placeholder="Viết suy nghĩ của bạn vào đây" required></textarea>
+		    <textarea id="content" rows="7" name="content" type="text" class="form-control" placeholder="Viết suy nghĩ của bạn vào đây" required></textarea>
 		  </div>
 		  <button type="submit" name="submit" class="btn btn-primary btn-block">Gửi Confession</button>
 		</form><br>
