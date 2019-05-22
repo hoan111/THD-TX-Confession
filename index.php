@@ -1,5 +1,6 @@
 <?php 
 	require_once('include/config.php');
+	require_once('include/session.php');
 
 	if (isset($_POST['submit'])) {
 		$noi_dung = $_POST['content'];
@@ -9,9 +10,10 @@
 		$mysqli->query($sql);
 
 		if ($mysqli == TRUE) {
-			echo 'Đã thêm';
+			$_SESSION["OkMess"] = 'Đã gửi đi và hãy đợi quản trị viên duyệt';
+
 		}else{
-			echo 'lỗi mẹ rồi';
+			$_SESSION["ErrorMess"] = "Lỗi mẹ rồi";
 		}
 	}
 ?>
@@ -38,8 +40,12 @@
 		  <div class="form-group" contentEditable="true">
 		    <textarea id="content" rows="3" name="content" type="text" class="form-control" placeholder="Viết suy nghĩ của bạn vào đây" required></textarea>
 		  </div>
-		  <button type="submit" name="submit" class="btn btn-primary btn-block">Gửi</button>
-		</form>
+		  <button type="submit" name="submit" class="btn btn-primary btn-block">Gửi Confession</button>
+		</form><br>
+		<?php 
+			echo OkMess();
+			echo ErrorMess();
+		?>
 	</div>
 </div>
 <!-- Bootstrap JS -->
