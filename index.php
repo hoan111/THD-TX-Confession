@@ -1,14 +1,14 @@
 <?php 
-	require_once('server/config.php');
+	require_once('include/config.php');
 
 	if (isset($_POST['submit'])) {
 		$noi_dung = $_POST['content'];
 
 		global $mysqli;
-		$sql="INSERT INTO 'gui_den'('noi_dung') VALUES ('$noi_dung')";
-		$conn->query($sql);
+		$sql="INSERT INTO `gui_den`(`noi_dung`) VALUES ('$noi_dung')";
+		$mysqli->query($sql);
 
-		if ($conn === TRUE) {
+		if ($mysqli == TRUE) {
 			echo 'Đã thêm';
 		}else{
 			echo 'lỗi mẹ rồi';
@@ -36,7 +36,7 @@
 	<div class="section">
 		<form target="index.php" method="post" >
 		  <div class="form-group" contentEditable="true">
-		    <textarea id="content" rows="3" name="content" type="text" class="form-control" placeholder="Viết suy nghĩ của bạn vào đây"></textarea>
+		    <textarea id="content" rows="3" name="content" type="text" class="form-control" placeholder="Viết suy nghĩ của bạn vào đây" required></textarea>
 		  </div>
 		  <button type="submit" name="submit" class="btn btn-primary btn-block">Gửi</button>
 		</form>
