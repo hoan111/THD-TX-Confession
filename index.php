@@ -10,7 +10,7 @@
 		$mysqli->query($sql);
 
 		if ($mysqli == TRUE) {
-			$_SESSION["OkMess"] = 'Đã gửi đi và đợi quản trị viên duyệt';
+			$_SESSION["OkMess"] = 'Confession của bạn đã được gửi. Hãy đợi quản trị viên duyệt';
 
 		}else{
 			$_SESSION["ErrorMess"] = "Lỗi mẹ rồi";
@@ -37,10 +37,15 @@
 
 <div class="container">
 	<div class="section">
-		<form target="index.php" method="post" >
+		<form  method="post" enctype="multipart/form-data">
+		  <p style="font-size: 20px;"><b>Hãy viết hết những gì bạn muốn đăng xuống phía dưới:</b></p><br>
 		  <div class="form-group" contentEditable="true">
-		    <textarea id="content" rows="7" name="content" type="text" class="form-control" placeholder="Viết suy nghĩ của bạn vào đây" required></textarea>
+		    <textarea id="content" rows="7" name="content" type="text" class="form-control" placeholder="Viết vào đây" required></textarea>
 		  </div>
+		  <p style="font-size: 20px;"><b>Upload ảnh và video (Nếu có)</b></p><br>
+		  <div class="form-group">
+    		<input type="file" class="form-control-file">
+  		  </div>
 		  <button type="submit" name="submit" class="btn btn-primary btn-block">Gửi Confession</button>
 		</form><br>
 		<?php 
