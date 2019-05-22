@@ -30,7 +30,8 @@
 	<script src="assets/js/auto.js" type="text/javascript" charset="utf-8" async defer></script>
 </head>
 <body>
-
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.3&appId=274900842999711&autoLogAppEvents=1"></script>
 <div class="header">
 	<img src="assets/media/cfs.jpg" alt="" width="40px" height="40px">
 </div>
@@ -46,13 +47,17 @@
 		  <div class="form-group">
     		<input type="file" class="form-control-file">
   		  </div>
-		  <button type="submit" name="submit" class="btn btn-primary btn-block">Gửi Confession</button>
+		  <button type="submit" name="submit" class="btn btn-primary btn-block btn-sm">Gửi Confession</button>
 		</form><br>
 		<?php 
 			echo OkMess();
 			echo ErrorMess();
 		?>
 	</div>
+</div>
+<div class="footer">
+<p>&copy; <?php echo date("Y"); ?> THPT Trần Hưng Đạo - Thanh Xuân</p><br>
+<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fthptthdtxcfs%2F&tabs&width=314&height=214&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=274900842999711" width="314" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 </div>
 <!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
