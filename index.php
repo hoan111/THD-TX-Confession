@@ -4,14 +4,12 @@
 
 	if (isset($_POST['submit'])) {
 		$noi_dung = $_POST['content'];
-
 		global $mysqli;
 		$sql="INSERT INTO `gui_den`(`noi_dung`) VALUES ('$noi_dung')";
 		$mysqli->query($sql);
 
 		if ($mysqli == TRUE) {
 			$_SESSION["OkMess"] = 'Confession của bạn đã được gửi. Hãy đợi quản trị viên duyệt';
-
 		}else{
 			$_SESSION["ErrorMess"] = "Lỗi mẹ rồi";
 		}
@@ -45,7 +43,7 @@
 		  </div>
 		  <p style="font-size: 20px;"><b>Upload ảnh và video (Nếu có)</b></p><br>
 		  <div class="form-group">
-    		<input type="file" class="form-control-file">
+    		<input type="file" name="fileToUpload" id="fileToUpload" class="form-control-file">
   		  </div>
 		  <button type="submit" name="submit" class="btn btn-primary btn-block btn-sm">Gửi Confession</button>
 		</form><br>
