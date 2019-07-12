@@ -31,7 +31,10 @@
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.3&appId=274900842999711&autoLogAppEvents=1"></script>
 <div class="header">
-	<img src="assets/media/cfs.jpg" alt="" width="40px" height="40px">
+	<div class="logo">
+		<img src="assets/media/cfs.jpg" alt="" width="40px" height="40px">
+		
+	</div>
 </div>
 
 <div class="container">
