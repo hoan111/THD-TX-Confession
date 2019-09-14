@@ -3,10 +3,13 @@
 	session_start();
 
 	// include autoload
-	require './fb-login/vendor/autoload.php';
+	require './include/fb-login/vendor/autoload.php';
 
 	// 
-	$fb = new Facebook\Facebook([
-		
-	]) 
+	$FB = new Facebook\Facebook([
+		'app_id' => '2088181491452730',
+		'app_secret' => 'e91b96a59dc9596f9ebd2c4ca7eb413f'
+	]);
+
+	$helper = $FB->getRedirectLoginHelper();
 ?>

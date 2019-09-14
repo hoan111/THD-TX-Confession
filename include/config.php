@@ -3,7 +3,7 @@
 	$localhost = 'localhost';
 	$username = "root";
 	$password = "";
-	$database = "cfs";
+	$database = "test";
 
 	//doi tuong de ket noi
 	$mysqli = new mysqli($localhost, $username, $password, $database);
