@@ -2,11 +2,32 @@
 	require_once('include/config.php');
 	require_once('include/session.php');
 
-	if (isset($_POST['submit'])) {
+	if (isset($_POST['submit']) || isset($_POST['fileToUpload'])) {
 		$noi_dung = $_POST['content'];
 		global $mysqli;
-		$sql="INSERT INTO `gui_den`(`noi_dung`) VALUES ('$noi_dung')";
-		$mysqli->query($sql);
+		// Lay ten anh
+  		$image = $_FILES['fileToUpload']['name'];
+
+  		// Lay phan duoi cua file
+  		$extension = substr($image, strpos($image, '.') + 1);
+
+  		// Noi luu anh
+  		$target = "uploads/".basename($image);
+
+  		// Kiem tra xem co phai file anh hay khong
+  		if( $extension == "jpg" || $extension == "jpeg" || $extension == "png" ) {
+  			// Chuyen anh vao thu muc uploads
+  			move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $target);
+  		}else{
+  			$_SESSION["ErrorMess"] = "File bạn tải lên không phải là file ảnh";
+  		}
+
+  		// Encode the image string data into base64
+		$image_base64 = base64_encode($image);
+
+		// Luu du lieu vao database
+  		$sql = "INSERT INTO `gui_den`(`noi_dung`, `media`) VALUES ('$noi_dung', '$image_base64')";
+  		$mysqli->query($sql);
 
 		if ($mysqli == TRUE) {
 			$_SESSION["OkMess"] = 'Confession của bạn đã được gửi. Hãy đợi quản trị viên duyệt';
