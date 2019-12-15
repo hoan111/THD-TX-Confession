@@ -5,9 +5,7 @@
 	$permissions = ["email"];
 	$loginURL = $helper->getLoginUrl($redirectURL, $permissions);
 
-	
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
