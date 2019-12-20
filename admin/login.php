@@ -4,7 +4,7 @@
 	$redirectURL = "http://128d12ca.ngrok.io/THD-TX-Confession/include/fb-callback.php";
 	$permissions = ["email"];
 	$loginURL = $helper->getLoginUrl($redirectURL, $permissions);
-
+	
 ?>
 
 <!DOCTYPE html>

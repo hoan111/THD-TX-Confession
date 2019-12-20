@@ -1,0 +1,45 @@
+.col-sm-2 {
+	background: #2c3e50;  /* fallback for old browsers */
+	float: left;
+}
+
+.avatar {
+	margin: 0 auto;
+	text-align: center;
+	padding: 10px;
+	color: #fff;
+}
+.name {
+	padding: 10px;
+}
+
+.menu {
+	padding: 20px;
+	background: #2c3e50;
+	color: #fff;
+	margin: 0 auto;
+	float: left;
+}
+
+.menu-list {
+	padding: 20px;
+	display: inline-block;
+	list-style: none;
+	color: #fff;
+}
+
+.menu-list:hover {
+	background: #34495e;
+	border-radius: 25px;
+}
+a {
+ 	text-decoration: none;
+ 	color: #fff;
+ }
+
+a:hover {
+	text-decoration: none;
+ 	color: #fff;
+}
+
+
